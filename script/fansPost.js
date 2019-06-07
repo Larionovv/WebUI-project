@@ -21,6 +21,11 @@ document.getElementById('getFansPost').onclick = () => {
   putPostInPage(fansPostText);
 };
 
+const isOnline = () =>{
+  return console.log(navigator.onLine);
+
+};
+
 
 const getPostDate = () => {
   let today = new Date();
@@ -52,7 +57,8 @@ const putPostInPage = (fansPostText) => {
   let form = document.getElementById('fanPostForm');
   let commentsContainer = document.getElementById('container-for-fan');
 
-  if (fansPostText.trim() === false) {
+  isOnline();
+  if (fansPostText.trim() === false && isOnline() === true) {
     form.classList.add("was-validated");
     event.stopPropagation();
   } else {
