@@ -1,12 +1,13 @@
 window.onload = () => {
   let newsContainer = document.getElementById('container-for-news');
   let newsArray = JSON.parse(localStorage.getItem("newsArray"));
+  let idForPost = 5;
 
   // newsArray.forEach((content) => {
 
     for (let index = 0; index < newsArray.length ; index+=1) {
       newsContainer.insertAdjacentHTML(
-        "beforebegin", `<article class="card p-3 mb-2 mx-auto" style="width: 16rem;">
+        "beforebegin", `<article class="card p-3 mb-2 mx-auto" style="width: 16rem;" id="${idForPost}">
                              <img src="./img/add_photo.png"
                              class="card-img-top" alt="...">
                         <article class="card-body">
@@ -34,7 +35,7 @@ const putNewsArrayInLocalStorage = (newsTitle, newsDescription) => {
 const putNewsInPage = (newsTitle, newsDescription) => {
   let form = document.getElementById('newsForm');
 
-  if (newsTitle.trim() === false && newsDescription.trim() ===false) {
+  if (newsTitle.trim() === false && newsDescription.trim() === false) {
     form.classList.add("was-validated");
     event.stopPropagation();
   } else {
@@ -44,5 +45,21 @@ const putNewsInPage = (newsTitle, newsDescription) => {
     document.getElementById('newsDescription').value = '';
 
   }
+  document.getElementById('newsImageUpload').onclick = () => {
+     let newsArticleImageUpload = document.getElementById("newsImageUpload");
+      let newsArticleImagePreview = document.getElementById("newsImagePreview");
+
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        newsArticleImagePreview.src = reader.result;
+      }, false);
+
+      if (newsArticleImageUpload) {
+        reader.readAsDataURL(newsArticleImageUpload.files[0]);
+      }
+    };
+
 };
+
+
 

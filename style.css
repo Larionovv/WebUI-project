@@ -1,6 +1,6 @@
 body{
     padding-top: 62px;
-    font-size: 14pt;
+    font-size: 12pt;
     font-family: sans-serif;
     color: #c1ccb7;
     background:url(http://bootstraptema.ru/assets/img/bg/dementor.png);
@@ -45,8 +45,8 @@ hr{
         transform: translate(0, 0);
     }
     100% {
-        -webkit-transform: translate(-100%, 0);
-        transform: translate(-100%, 0)
+        -webkit-transform: translate(100%, 0);
+        transform: translate(100%, 0)
     }
 }
 
@@ -55,7 +55,7 @@ hr{
         transform: translate(0, 0);
     }
     100% {
-        transform: translate(-100%, 0)
+        transform: translate(100%, 0)
     }
 }
 .marquee {
