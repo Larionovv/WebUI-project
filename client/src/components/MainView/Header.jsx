@@ -24,7 +24,7 @@ export default class Header extends Component {
 					<Navbar.Brand>
 						<Link to="/">
 						<img
-						src="../../../public/icon.png"
+						src="../../../public/iconDakar.png"
 						className="d-inline-block align-top"
 						alt="logo"
 						/>
